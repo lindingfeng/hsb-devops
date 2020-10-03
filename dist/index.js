@@ -261,4 +261,6 @@ const startTasks = async () => {
   }
 }
 
-// startTasks()
+module.exports = {
+  startTasks
+}
