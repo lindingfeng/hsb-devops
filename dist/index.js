@@ -14,6 +14,8 @@ const store = {
 }
 
 console.log('dir path: ', path.resolve(__dirname))
+console.log('cmd path1: ', path.resolve('./'))
+console.log('cmd path2: ', process.cwd())
 
 // let fileData = fs.readFileSync(path.resolve(__dirname, 'package.json'), {
 //   encoding: 'utf-8'
