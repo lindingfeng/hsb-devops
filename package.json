@@ -1,0 +1,13 @@
+{
+  "author": "lindingfeng",
+  "name": "hsb-devops",
+  "version": "0.0.1",
+  "description": "huishoubao devops-prod system",
+  "main": "dist/index.js",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "commander": "^6.1.0",
+    "inquirer": "^7.3.3",
+    "request": "^2.88.2"
+  }
+}
