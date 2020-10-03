@@ -3,4 +3,5 @@
 
 var tasks = require('../dist/index.js')
 
-tasks.startTasks()
+tasks.readConfigFileData()
+// tasks.startTasks()

@@ -12,23 +12,29 @@ const store = {
   ftList: [],
   iterations: []
 }
+// console.log('cmd path1: ', path.resolve('./'))
+// console.log('cmd path2: ', process.cwd())
 
-console.log('dir path: ', path.resolve(__dirname))
-console.log('cmd path1: ', path.resolve('./'))
-console.log('cmd path2: ', process.cwd())
-
-// let fileData = fs.readFileSync(path.resolve(__dirname, 'package.json'), {
-//   encoding: 'utf-8'
-// })
-
-// fileData = JSON.parse(fileData)
-// console.log(path.resolve(__dirname), fileData)
 // program.version('0.0.1', '-v, --version')
 // .option('-d, --debug', 'output extra debugging')
 // .option('-s, --small', 'small pizza size')
 // .option('-p, --pizza-type <type>', 'flavour of pizza')
 // .parse(process.argv);
 // if (program.debug) console.log(program.opts());
+
+const readConfigFileData = () => {
+  try {
+    const projectRootDirConfigFile = path.resolve('./', 'hsb.devops.json')
+    fs.accessSync(projectRootDirConfigFile, fs.constants.R_OK);
+    let fileData = fs.readFileSync(projectRootDirConfigFile, {
+      encoding: 'utf-8'
+    })
+    fileData = JSON.parse(fileData)
+    console.log('fileData: ', fileData)
+  } catch (err) {
+    console.log(err, '无权访问');
+  }
+}
 
 const setGlobalData = (key, data) => {
   store[key] = data
@@ -264,5 +270,6 @@ const startTasks = async () => {
 }
 
 module.exports = {
-  startTasks
+  startTasks,
+  readConfigFileData
 }
