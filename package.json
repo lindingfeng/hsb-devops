@@ -4,6 +4,9 @@
   "version": "0.0.1",
   "description": "huishoubao devops-prod system",
   "main": "dist/index.js",
+  "scripts": {
+    "hsb-devops": "node dist/index.js"
+  },
   "dependencies": {
     "child_process": "^1.0.2",
     "commander": "^6.1.0",
