@@ -4,9 +4,11 @@ const request = require('request')
 const { program } = require('commander');
 const readline = require('readline');
 const inquirer = require('inquirer');
+const chalk = require('chalk')
 const config = require('../config');
 
 const store = {
+  hsbDevopsConfig: {},
   loginInfo: {},
   userInfo: {},
   ftList: [],
@@ -22,6 +24,11 @@ const store = {
 // .parse(process.argv);
 // if (program.debug) console.log(program.opts());
 
+/*
+ * @Description: 读取配置文件
+ * @MethodAuthor:  lindingfeng
+ * @Date: 2020-10-03 22:53:55
+*/
 const readConfigFileData = () => {
   try {
     const projectRootDirConfigFile = path.resolve('./', 'hsb.devops.json')
@@ -30,9 +37,10 @@ const readConfigFileData = () => {
       encoding: 'utf-8'
     })
     fileData = JSON.parse(fileData)
-    console.log('fileData: ', fileData)
+    setGlobalData('hsbDevopsConfig', fileData)
   } catch (err) {
-    console.log(err, '无权访问');
+    console.log(chalk.red('缺少hsb.devops.json配置文件或文件不可读\n'));
+    process.exit(1)
   }
 }
 
@@ -62,17 +70,14 @@ const loginByAMC = () => {
       }
     }, (err, res, data) => {
       if (err) {
-        reject(err)
-        return
+        return reject(err)
       }
       if (!data || !data.body || !data.body.data) {
-        reject('Login fail . \nNo data')
-        return
+        return reject('登录失败！')
       }
       const body = data.body
       if (+body.ret !== 0) {
-        reject(body.retinfo)
-        return
+        return reject(body.retinfo)
       }
       resolve(body.data)
     })
@@ -105,8 +110,7 @@ const getUserInfo = () => {
       json: true
     }, (err, res, data) => {
       if (err) {
-        reject(err)
-        return
+        return reject(err)
       }
       if (data && data._data && +data._data._errCode === 0) {
         resolve(data._data.retData || {})
@@ -143,8 +147,7 @@ const getFtList = () => {
       json: true
     }, (err, res, data) => {
       if (err) {
-        reject(err)
-        return
+        return reject(err)
       }
       if (data && data._data && +data._data._errCode === 0) {
         resolve(data._data.retData || {})
@@ -182,8 +185,7 @@ const getIterations = (ftid = '') => {
       json: true
     }, (err, res, data) => {
       if (err) {
-        reject(err)
-        return
+        return reject(err)
       }
       if (data && data._data && +data._data._errCode === 0) {
         resolve(data._data.retData || [])
@@ -265,7 +267,12 @@ const startTasks = async () => {
     setGlobalData('userInfo', userInfo)
     chooseFt()
   } catch (error) {
-    console.log(error)
+    if (typeof error === 'string') {
+      console.log(chalk.red(error))
+    } else {
+      console.log(chalk.red(JSON.stringify(error)))
+    }
+    process.exit(1)
   }
 }
 
