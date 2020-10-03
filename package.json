@@ -5,7 +5,7 @@
   "description": "huishoubao devops-prod system",
   "main": "dist/index.js",
   "scripts": {
-    "hsb-devops": "node dist/index.js"
+    "hsb-devops": "./node_modules/bin/hsb-devops"
   },
   "dependencies": {
     "child_process": "^1.0.2",
