@@ -38,6 +38,7 @@ const readConfigFileData = () => {
     })
     fileData = JSON.parse(fileData)
     setGlobalData('hsbDevopsConfig', fileData)
+    startTasks()
   } catch (err) {
     console.log(chalk.red('缺少hsb.devops.json配置文件或文件不可读\n'));
     process.exit(1)
@@ -57,7 +58,6 @@ const loginByAMC = () => {
   const loginForm = {
     username: 'lindingfeng@huishoubao.com.cn',
     password: 'wsjj1994',
-    jump_url: 'http://devops-prod.huishoubao.com/dist/index.html',
     system_id: '44'
   }
   return new Promise((resolve, reject) => {

@@ -2,7 +2,7 @@
   "author": "lindingfeng",
   "name": "hsb-devops",
   "version": "0.0.1",
-  "description": "huishoubao devops-prod system",
+  "description": "huishoubao devops system",
   "main": "dist/index.js",
   "scripts": {},
   "dependencies": {

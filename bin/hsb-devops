@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
-var tasks = require('../dist/index.js')
+var { readConfigFileData } = require('../dist/index.js')
 
-tasks.readConfigFileData()
-// tasks.startTasks()
+readConfigFileData()
+// startTasks()

@@ -1,0 +1,38 @@
+{
+  "alwaysNeedTest": false,
+  "failDing": {
+    "url": "钉钉webhook",
+    "at": [
+      "手机号码",
+      "手机号码"
+    ]
+  },
+  "successDing": {
+    "url": "钉钉webhook",
+    "at": [
+      "手机号码",
+      "手机号码"
+    ]
+  },
+  "USER": {
+    "SYSTEM_ID": "44",
+    "USERNAME": "AMC账号",
+    "PASSWORD": "AMC密码",
+    "URL": "发版系统地址",
+    "HOST": "发版系统域名"
+  },
+  "ORDER": {
+    "ftid": "21923671",
+    "TL_ID": "1244",
+    "TL": "羊年",
+    "TE": {"1875": "胡育新"},
+    "app_name": "recycle_nubia",
+    "cdn_upload_dir":"/karecycle/",
+    "gray_publish_flag": 0,
+    "publish_desc": "",
+    "publish_type": "",
+    "push_cdn_type": 2,
+    "rolling_flag": 0,
+    "test_flag": 1
+  }
+}
