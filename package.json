@@ -3,7 +3,7 @@
   "name": "hsb-devops",
   "version": "0.0.1",
   "description": "huishoubao devops system",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {},
   "dependencies": {
     "chalk": "^4.1.0",
