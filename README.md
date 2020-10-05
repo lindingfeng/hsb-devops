@@ -17,7 +17,7 @@
     npm i -D hsb-devops
 
 
-#### Install By yarn
+#### Install By `yarn`
 
     yarn add -D hsb-devops
 

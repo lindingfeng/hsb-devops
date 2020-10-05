@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
 
-var { startTasks } = require('../lib/index.js')
+var { start, base } = require('../lib/index.js')
 
-startTasks()
+base()

@@ -4,14 +4,15 @@ const chalk = require('chalk')
 const config = {
   AMC_LOGIN_HOST: 'http://api-amc.huishoubao.com.cn/login',
   AMC_API_HOST: 'api-amc.huishoubao.com.cn',
-  version: '3.0.0',
-  msgType: 'request',
-  remark: '',
-  timestamps: '',
-  loginUrl: 'http://api-amc.huishoubao.com.cn/login',
-  userInfoUrl: 'http://devops-prod.huishoubao.com/gateway/get_user_info',
-  ftListUrl: 'http://devops-prod.huishoubao.com/gateway/get_ft_list',
-  iterationsUrl: 'http://devops-prod.huishoubao.com/gateway/get_iteration'
+  VERSION: '3.0.0',
+  MSG_TYPE: 'request',
+  REMARK: '',
+  TIMESTAMPS: '',
+  BASE_LIST: [
+    { name: '提交发版工单 (devops-prod)', value: 1 },
+    { name: '新建发布任务 (devops-new)', value: 2 },
+    { name: '上传资源资源 (production)', value: 3 }
+  ]
 }
 
 try {
