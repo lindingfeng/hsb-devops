@@ -17,6 +17,7 @@ const config = {
     { name: '新建发布任务 (devops-new)', value: 2 },
     { name: '上传静态资源 (production)', value: 3 },
     { name: '压缩静态资源 (zip、tar)', value: 4 },
+    { name: '拉取hsb_vue模板', value: 5 }
   ],
   VERSION_SCOPE: [
     { name: '大版本迭代', value: 0 },
