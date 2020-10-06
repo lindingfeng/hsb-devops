@@ -23,6 +23,10 @@ const config = {
     { name: '小功能迭代', value: 1 },
     { name: '优化迭代', value: 2 }
   ],
+  TIPS_SCOPE: [
+    { name: '已合并', value: 1 },
+    { name: '还没，退出合并再来吧~', value: 2 }
+  ],
   COMPRESS_TEMPLATE_LIST: [
     {
       name: 'type',
