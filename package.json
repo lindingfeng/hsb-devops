@@ -6,11 +6,14 @@
   "main": "lib/index.js",
   "scripts": {},
   "dependencies": {
+    "archiver": "^5.0.2",
     "chalk": "^4.1.0",
     "child_process": "^1.0.2",
     "commander": "^6.1.0",
     "inquirer": "^7.3.3",
-    "request": "^2.88.2"
+    "ora": "^5.1.0",
+    "request": "^2.88.2",
+    "rimraf": "^3.0.2"
   },
   "bin": {
     "hsb-devops": "./bin/hsb-devops"

@@ -26,7 +26,7 @@
     "TL_ID": "1244",
     "TL": "羊年",
     "TE": {"1875": "胡育新"},
-    "app_name": "recycle_nubia",
+    "app_name": "ka.huishoubao.com.dist",
     "cdn_upload_dir":"/karecycle/",
     "gray_publish_flag": 0,
     "publish_desc": "",
@@ -34,5 +34,10 @@
     "push_cdn_type": 2,
     "rolling_flag": 0,
     "test_flag": 1
+  },
+  "COMPRESS": {
+    "TYPE": "zip",
+    "PATH": "dist",
+    "DIR_NAME": "hsb"
   }
 }
