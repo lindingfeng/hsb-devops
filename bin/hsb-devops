@@ -20,7 +20,9 @@ program
   .option('-s, --small', 'small pizza size')
   .option('-p, --pizza-type <type>', 'flavour of pizza')
   .action((cli, projectName) => {
-    installHsbVuePackage(cli, projectName)
+    // installHsbVuePackage(cli, projectName)
+    execCommand('node -v')
+    execCommand('npm -v')
   });
 
 program
