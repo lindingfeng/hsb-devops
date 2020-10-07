@@ -13,7 +13,8 @@
     "inquirer": "^7.3.3",
     "ora": "^5.1.0",
     "request": "^2.88.2",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "shelljs": "^0.8.4"
   },
   "bin": {
     "hsb-devops": "./bin/hsb-devops"
