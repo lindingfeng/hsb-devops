@@ -61,14 +61,21 @@ const config = {
   ]
 }
 
-try {
-  const projectRootDirConfigFile = path.resolve('./', 'hsb.devops.json')
-  fs.accessSync(projectRootDirConfigFile, fs.constants.R_OK);
-  let fileData = fs.readFileSync(projectRootDirConfigFile, { encoding: 'utf-8' })
-  Object.assign(config, JSON.parse(fileData))
-} catch (err) {
-  console.log(chalk.red('项目更目录未发现hsb.devops.json配置文件\n'));
-  process.exit(1)
+const mergeHsbDevopsConfig = () => {
+  return new Promise((resolve, reject) => {
+    try {
+      const projectRootDirConfigFile = path.resolve('./', 'hsb.devops.json')
+      fs.accessSync(projectRootDirConfigFile, fs.constants.R_OK);
+      let fileData = fs.readFileSync(projectRootDirConfigFile, { encoding: 'utf-8' })
+      Object.assign(config, JSON.parse(fileData))
+      resolve()
+    } catch (err) {
+      reject('项目更目录未发现hsb.devops.json配置文件')
+    }
+  })
 }
 
-module.exports = config
+module.exports = {
+  config,
+  mergeHsbDevopsConfig
+}
