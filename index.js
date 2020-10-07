@@ -1,4 +1,3 @@
-// const { program } = require('commander');
 // const readline = require('readline');
 const chalk = require('chalk')
 const { baseFeatrue } = require('./lib/module/baseFeatrue');

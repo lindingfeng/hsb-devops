@@ -1,6 +1,15 @@
 #!/usr/bin/env node
 'use strict';
 
-var { start, run } = require('../index.js')
+const { version } = require('../package.json')
+const program = require('commander');
 
-run()
+program
+  .version(version)
+  .option('-s, --small', 'small pizza size')
+  .option('-p, --pizza-type <type>', 'flavour of pizza');
+
+program
+  .parse(process.argv);
+
+require('../index.js').run()

@@ -1,9 +1,9 @@
 {
   "author": "lindingfeng",
   "name": "hsb-devops",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "huishoubao devops system",
-  "main": "lib/index.js",
+  "main": "./index.js",
   "scripts": {},
   "dependencies": {
     "archiver": "^5.0.2",
