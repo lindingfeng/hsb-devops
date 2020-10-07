@@ -12,7 +12,7 @@ program
   .option('-p, --pizza-type <type>', 'flavour of pizza')
   .action((cli, projectName) => {
     // console.log(cli, projectName);
-    exec(`npx git+http://gitlab.huishoubao.com/web_team/public/hsb_vue.git create my-app`, (error, stdout, stderr) => {
+    exec(`yarn add axios`, (error, stdout, stderr) => {
       if (error) {
         console.log(`执行的错误: ${error}`)
       }
