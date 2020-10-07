@@ -16,8 +16,7 @@ const config = {
     { name: '提交发版工单 (devops-prod)', value: 1 },
     { name: '新建发布任务 (devops-new)', value: 2 },
     { name: '上传静态资源 (production)', value: 3 },
-    { name: '压缩静态资源 (zip、tar)', value: 4 },
-    { name: '拉取hsb_vue模板', value: 5 }
+    { name: '压缩静态资源 (zip、tar)', value: 4 }
   ],
   VERSION_SCOPE: [
     { name: '大版本迭代', value: 0 },
@@ -66,7 +65,7 @@ try {
   let fileData = fs.readFileSync(projectRootDirConfigFile, { encoding: 'utf-8' })
   Object.assign(config, JSON.parse(fileData))
 } catch (err) {
-  console.log(chalk.red('缺少hsb.devops.json配置文件或文件不可读\n'));
+  console.log(chalk.red('项目更目录未发现hsb.devops.json配置文件\n'));
   process.exit(1)
 }
 
