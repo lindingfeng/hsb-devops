@@ -4,6 +4,8 @@ const chalk = require('chalk')
 const config = {
   AMC_LOGIN_HOST: 'http://api-amc.huishoubao.com.cn/login',
   AMC_API_HOST: 'api-amc.huishoubao.com.cn',
+  DEVOPS_PROD_HOST: 'http://devops-prod.huishoubao.com/',
+  DEVOPS_NEW_HOST: 'http://devops-new.huishoubao.com/',
   VERSION_2: '2.0.0',
   VERSION_3: '3.0.0',
   MSG_TYPE: 'request',
