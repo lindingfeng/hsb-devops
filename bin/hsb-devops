@@ -4,18 +4,7 @@
 const { version } = require('../package.json')
 const program = require('commander');
 const shell = require('shelljs');
-const { execCommand } = require('../lib/exec')
-
-const installHsbVuePackage = async (cli, projectName) => {
-  const res = await execCommand('npm i -g git+http://gitlab.huishoubao.com/web_team/public/hsb_vue.git --registry=https://registry.npm.taobao.org')
-  console.log(res)
-  CreateHsbVueProject(cli, projectName)
-}
-
-const CreateHsbVueProject = async (cli, projectName) => {
-  const res = await execCommand(`hsbvue create ${projectName}`)
-  console.log(res)
-}
+const { spawn } = require('child_process');
 
 program
   .version(version)
@@ -26,8 +15,9 @@ program
     // installHsbVuePackage(cli, projectName)
     // execCommand('node -v')
     // execCommand('npm -v')
-    shell.exec('npm i -g git+http://gitlab.huishoubao.com/web_team/public/hsb_vue.git --registry=https://registry.npm.taobao.org')
-    shell.exec(`hsbvue create ${projectName}`)
+    // shell.exec('npm i -g git+http://gitlab.huishoubao.com/web_team/public/hsb_vue.git --registry=https://registry.npm.taobao.org')
+    // shell.exec(`hsbvue create ${projectName}`)
+    spawn(`hsbvue create ${projectName}`)
   });
 
 program
