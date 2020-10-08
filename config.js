@@ -40,14 +40,8 @@ const config = {
     },
     {
       name: 'path',
-      message: '请输入压缩文件路径(基于当前命令目录路径)',
-      type: 'input',
-      validate: (res) => {
-        if (!res) {
-          return false
-        }
-        return true
-      }
+      message: '请输入压缩文件路径(默认当前目录)',
+      type: 'input'
     },
     {
       name: 'dir_name',
