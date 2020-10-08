@@ -2,19 +2,11 @@
 const chalk = require('chalk')
 const { baseFeatrue } = require('./lib/module/baseFeatrue');
 const applyOrder = require('./lib/module/applyOrder');
+const createTask = require('./lib/module/createTask');
 const { startCompress } = require('./lib/module/compress');
 const { setUserInfo } = require('./lib/user')
+const { uploadFiles } = require('./lib/upload')
 const { mergeHsbDevopsConfig } = require('./config');
-
-// console.log('cmd path1: ', path.resolve('./'))
-// console.log('cmd path2: ', process.cwd())
-
-// program.version('0.0.1', '-v, --version')
-// .option('-d, --debug', 'output extra debugging')
-// .option('-s, --small', 'small pizza size')
-// .option('-p, --pizza-type <type>', 'flavour of pizza')
-// .parse(process.argv);
-// if (program.debug) console.log(program.opts());
 
 /*
  * @Description: 开始执行
@@ -32,10 +24,12 @@ const start = async (id = 1) => {
         applyOrder()
         break;
       case 2:
-        console.log(chalk.green('功能开发中，敬请期待...'))
+        createTask()
         break;
       case 3:
-        console.log(chalk.green('功能开发中，敬请期待...'))
+        // console.log(chalk.green('功能开发中，敬请期待...'))
+        // uploadFile()
+        uploadFiles()
         break;
       case 4:
         startCompress()

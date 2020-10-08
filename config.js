@@ -6,6 +6,7 @@ const config = {
   AMC_API_HOST: 'api-amc.huishoubao.com.cn',
   DEVOPS_PROD_HOST: 'http://devops-prod.huishoubao.com/',
   DEVOPS_NEW_HOST: 'http://devops-new.huishoubao.com/',
+  UPLOAD_FILE_HOST: 'http://mobile.huishoubao.com/common/upload/uploadFileToTencentCould',
   VERSION_2: '2.0.0',
   VERSION_3: '3.0.0',
   MSG_TYPE: 'request',
@@ -14,11 +15,12 @@ const config = {
   DEFAULT_ZY_FTID: '21923671',
   COMMAND_LINE: 5,
   DESC: 'update something',
+  FILTER_UPLOAD_RE: '\.(png|jpe?g|gif)(\?.*)?$',
   BASE_LIST: [
-    { name: '提交发版工单 (devops-prod)', value: 1 },
-    { name: '新建发布任务 (devops-new)', value: 2 },
-    { name: '上传静态资源 (production)', value: 3 },
-    { name: '压缩静态资源 (zip、tar)', value: 4 }
+    { name: '提交发版工单 <devops-prod>', value: 1 },
+    { name: '新建发布任务 <devops-new>', value: 2 },
+    { name: '文件上传CDN', value: 3 },
+    { name: '压缩文件', value: 4 }
   ],
   VERSION_SCOPE: [
     { name: '大版本迭代', value: 0 },
