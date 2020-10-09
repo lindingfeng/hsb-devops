@@ -1,6 +1,5 @@
-const path = require('path');
 const fs = require('fs');
-const chalk = require('chalk')
+
 const config = {
   AMC_LOGIN_HOST: 'http://api-amc.huishoubao.com.cn/login',
   AMC_API_HOST: 'api-amc.huishoubao.com.cn',
@@ -19,8 +18,8 @@ const config = {
   BASE_LIST: [
     { name: '提交发版工单 <devops-prod>', value: 1 },
     { name: '新建发布任务 <devops-new>', value: 2 },
-    { name: '文件上传CDN', value: 3 },
-    { name: '压缩文件', value: 4 }
+    { name: '资源上传CDN', value: 3 },
+    { name: '压缩资源文件', value: 4 }
   ],
   VERSION_SCOPE: [
     { name: '大版本迭代', value: 0 },
@@ -60,7 +59,7 @@ const config = {
 const mergeHsbDevopsConfig = () => {
   return new Promise((resolve, reject) => {
     try {
-      const projectRootDirConfigFile = path.resolve('./', 'hsb.devops.json')
+      const projectRootDirConfigFile = `${process.cwd()}/hsb.devops.json`
       fs.accessSync(projectRootDirConfigFile, fs.constants.R_OK);
       let fileData = fs.readFileSync(projectRootDirConfigFile, { encoding: 'utf-8' })
       Object.assign(config, JSON.parse(fileData))

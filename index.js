@@ -27,8 +27,6 @@ const start = async (id = 1) => {
         createTask()
         break;
       case 3:
-        // console.log(chalk.green('功能开发中，敬请期待...'))
-        // uploadFile()
         uploadFiles()
         break;
       case 4:
