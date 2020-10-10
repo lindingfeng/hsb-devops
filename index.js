@@ -3,7 +3,8 @@ const chalk = require('chalk')
 const { baseFeatrue } = require('./lib/module/baseFeatrue');
 const applyOrder = require('./lib/module/applyOrder');
 const createTask = require('./lib/module/createTask');
-const { startCompress } = require('./lib/module/compress');
+const { webDoctor } = require('./lib/module/downloadModule');
+const { compressByTinify } = require('./lib/module/compress');
 const { setUserInfo } = require('./lib/user')
 const { uploadFiles } = require('./lib/upload')
 const { mergeHsbDevopsConfig } = require('./config');
@@ -17,6 +18,8 @@ const start = async (id = 1) => {
   try {
     if (![4].includes(id)) {
       await mergeHsbDevopsConfig()
+    }
+    if (![4, 5].includes(id)) {
       await setUserInfo()
     }
     switch (id) {
@@ -30,7 +33,10 @@ const start = async (id = 1) => {
         uploadFiles()
         break;
       case 4:
-        startCompress()
+        webDoctor()
+        break;
+      case 5:
+        compressByTinify()
         break;
       default:
         applyOrder()

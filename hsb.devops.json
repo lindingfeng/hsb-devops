@@ -39,5 +39,8 @@
     "TYPE": "zip",
     "PATH": "dist",
     "DIR_NAME": "hsb"
+  },
+  "TINIFY": {
+    "KEY": "Lh37kWP9W5QdMz22qChhtYkhMmgtwGLD"
   }
 }
