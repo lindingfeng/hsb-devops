@@ -31,6 +31,14 @@ const config = {
     { name: '已合并', value: 1 },
     { name: '还没，退出合并再来吧~', value: 2 }
   ],
+  CDN_UPLOAD_LIST: [
+    { name: '不上传', value: 0 },
+    { name: '上传', value: 1 }
+  ],
+  NEED_TAG_LIST: [
+    { name: '不需要', value: false },
+    { name: '需要', value: true }
+  ],
   COMPRESS_TEMPLATE_LIST: [
     {
       name: 'type',

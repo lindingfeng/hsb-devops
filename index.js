@@ -19,7 +19,7 @@ const start = async (id = 1) => {
     if (![4].includes(id)) {
       await mergeHsbDevopsConfig()
     }
-    if (![4, 5].includes(id)) {
+    if ([1, 2].includes(id)) {
       await setUserInfo()
     }
     switch (id) {
