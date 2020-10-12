@@ -2,35 +2,35 @@
 [![npm](https://img.shields.io/npm/v/http-server.svg?style=flat-square)](https://www.npmjs.com/package/http-server) [![homebrew](https://img.shields.io/homebrew/v/http-server?style=flat-square)](https://formulae.brew.sh/formula/http-server) [![npm downloads](https://img.shields.io/npm/dm/http-server?color=blue&label=npm%20downloads&style=flat-square)](https://www.npmjs.com/package/http-server)
 [![license](https://img.shields.io/github/license/http-party/http-server.svg?style=flat-square)](https://github.com/http-party/http-server)
 
-# hsb-devops: a command-line devops
+# hsb-tools: a command-line devops
 
-`hsb-devops` is a simple...
+`hsb-tools` is a simple tools...
 
 ## Installation:
 
 #### Install By `npm`
 
-    npm i -g hsb-devops
+    npm i -g hsb-tools
 
     or
 
-    npm i -D hsb-devops
+    npm i -D hsb-tools
 
 
 #### Install By `yarn`
 
-    yarn add -D hsb-devops
+    yarn add -D hsb-tools
 
 #### Running on-demand:
 
 Using `npx` you can run the script without installing it first:
 
-    npx hsb-devops [path] [options]
+    npx hsb-tools [path] [options]
      
 
 ## Usage:
 
-     hsb-devops [path] [options]
+     hsb-tools [path] [options]
 
 <!-- `[path]` defaults to `./public` if the folder exists, and `./` otherwise.
 
