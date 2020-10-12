@@ -1,8 +1,8 @@
 {
   "author": "lindingfeng",
-  "name": "hsb-devops",
+  "name": "hsb-tools",
   "version": "1.0.0",
-  "description": "huishoubao devops system",
+  "description": "huishoubao hsb-tools system",
   "main": "./index.js",
   "scripts": {},
   "dependencies": {
@@ -15,6 +15,6 @@
     "tinify": "^1.6.0-beta.2"
   },
   "bin": {
-    "hsb-devops": "./bin/hsb-devops"
+    "hsb-tools": "./bin/hsb-tools"
   }
 }
