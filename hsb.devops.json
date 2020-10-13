@@ -21,6 +21,20 @@
     "URL": "发版系统地址",
     "HOST": "http://devops-prod.huishoubao.com/"
   },
+  "ORDER": {
+    "ftid": "21923671",
+    "TL_ID": "1244",
+    "TL": "羊年",
+    "TE": {"1875": "胡育新"},
+    "app_name": "ka.huishoubao.com.dist",
+    "cdn_upload_dir":"/web/",
+    "gray_publish_flag": 0,
+    "publish_desc": "",
+    "publish_type": "",
+    "push_cdn_type": 2,
+    "rolling_flag": 0,
+    "test_flag": 1
+  },
   "COMPRESS": {
     "TYPE": "zip",
     "PATH": "dist",
