@@ -35,9 +35,14 @@ const config = {
     { name: '不上传', value: 0 },
     { name: '上传', value: 1 }
   ],
-  NEED_TAG_LIST: [
-    { name: '不需要', value: false },
-    { name: '需要', value: true }
+  DEVOPS_CDN_UPLOAD_LIST: [
+    { name: '不上传CDN', value: 1 },
+    { name: '静态资源上传CDN', value: 2 },
+    { name: '全量上传CDN', value: 3 }
+  ],
+  AUTO_TAG_LIST: [
+    { name: '需要', value: true },
+    { name: '不需要', value: false }
   ],
   COMPRESS_TEMPLATE_LIST: [
     {
@@ -55,12 +60,7 @@ const config = {
       name: 'dir_name',
       message: '请输入压缩文件名称',
       type: 'input',
-      validate: (res) => {
-        if (!res) {
-          return false
-        }
-        return true
-      }
+      validate: (res) => !!res
     }
   ]
 }
