@@ -3,7 +3,6 @@ const chalk = require('chalk')
 const { baseFeatrue } = require('./lib/module/baseFeatrue');
 const applyOrder = require('./lib/module/applyOrder');
 const createTask = require('./lib/module/createTask');
-const { webDoctor } = require('./lib/module/downloadModule');
 const { compressByTinify } = require('./lib/module/compress');
 const { setUserInfo } = require('./lib/user')
 const { uploadFiles } = require('./lib/upload')
@@ -16,9 +15,7 @@ const { mergeHsbDevopsConfig } = require('./config');
 */
 const start = async (id = 1) => {
   try {
-    if (![4].includes(id)) {
-      await mergeHsbDevopsConfig()
-    }
+    await mergeHsbDevopsConfig()
     if ([1, 2].includes(id)) {
       await setUserInfo()
     }
