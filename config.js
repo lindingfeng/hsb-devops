@@ -19,8 +19,7 @@ const config = {
     { name: '提交发版工单 <devops-prod>', value: 1 },
     { name: '新建发布任务 <devops-new>', value: 2 },
     { name: '资源上传CDN', value: 3 },
-    { name: '前端项目体检 <web-doctor>', value: 4 },
-    { name: '图片无损压缩 <tinify>', value: 5 }
+    { name: '图片无损压缩 <tinify>', value: 4 }
   ],
   VERSION_SCOPE: [
     { name: '大版本迭代', value: 0 },

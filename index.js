@@ -33,9 +33,6 @@ const start = async (id = 1) => {
         uploadFiles()
         break;
       case 4:
-        webDoctor()
-        break;
-      case 5:
         compressByTinify()
         break;
       default:
