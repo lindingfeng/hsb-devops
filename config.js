@@ -31,17 +31,21 @@ const config = {
     { name: '还没，退出合并再来吧~', value: 2 }
   ],
   CDN_UPLOAD_LIST: [
-    { name: '不上传', value: 0 },
-    { name: '上传', value: 1 }
+    { name: '上传', value: true },
+    { name: '不上传', value: false }
   ],
   DEVOPS_CDN_UPLOAD_LIST: [
     { name: '不上传CDN', value: 1 },
     { name: '静态资源上传CDN', value: 2 },
     { name: '全量上传CDN', value: 3 }
   ],
+  PUBLISH_TYPE_LIST: [
+    { name: '手动发版', value: 0 },
+    { name: '现在发布', value: 1 }
+  ],
   AUTO_TAG_LIST: [
-    { name: '需要', value: true },
-    { name: '不需要', value: false }
+    { name: '自动更新tag', value: true },
+    { name: '已有tag, 不需要更新', value: false }
   ],
   COMPRESS_TEMPLATE_LIST: [
     {
@@ -61,7 +65,39 @@ const config = {
       type: 'input',
       validate: (res) => !!res
     }
-  ]
+  ],
+  NO_LISTEN_PUBLISH_STATUS_LIST: [-1, 1, 4, 5, 8, 10, 11, 13, 14],
+  PUBLISH_TAG_APPLY_STATUS_MAP: {
+    '-1': '取消发布',
+    '0': '编译中',
+    '1': '编译失败',
+    '2': '待检查',
+    '3': '测试发版中',
+    '4': '测试发版成功',
+    '5': '测试发版失败',
+    '6': '待测试',
+    '7': '待发布',
+    '8': '已退回',
+    '9': '发布中',
+    '10': '发布失败',
+    '11': '已发布',
+    '12': '回滚中',
+    '13': '回滚失败',
+    '14': '回滚成功'
+  },
+  APP_TYPE_LIST: {
+    '1': 'C++',
+    '2': 'PHP',
+    '3': 'Python',
+    '4': 'Others',
+    '5': 'CDN',
+    '6': 'Config',
+    '7': 'thrift C++',
+    '8': 'thrift PHP',
+    '9': 'Andriod',
+    '10': 'Front',
+    '11': 'IOS'
+  }
 }
 
 const mergeHsbDevopsConfig = () => {
@@ -73,7 +109,7 @@ const mergeHsbDevopsConfig = () => {
       Object.assign(config, JSON.parse(fileData))
       resolve()
     } catch (err) {
-      reject('项目更目录未发现hsb.devops.json配置文件')
+      reject('项目根目录未发现hsb.devops.json配置文件')
     }
   })
 }

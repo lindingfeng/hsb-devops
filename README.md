@@ -10,16 +10,16 @@
 
 #### Install By `npm`
 
-    npm i -g hsb-tools
+    npm i -g hsb-tools --registry=http://129.204.136.155:4873
 
     or
 
-    npm i -D hsb-tools
+    npm i -D hsb-tools --registry=http://129.204.136.155:4873
 
 
 #### Install By `yarn`
 
-    yarn add -D hsb-tools
+    yarn add -D hsb-tools --registry=http://129.204.136.155:4873
 
 #### Running on-demand:
 
