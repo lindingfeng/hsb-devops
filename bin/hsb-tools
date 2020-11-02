@@ -4,11 +4,35 @@
 const { version } = require('../package.json')
 const chalk = require('chalk')
 const program = require('commander');
+const applyOrder = require('../lib/module/applyOrder');
+const { compressByTinify } = require('../lib/module/compress');
+const createTask = require('../lib/module/createTask');
+const { run } = require('../index.js')
 
 program
   .version(version)
-  // .command('create <cli> <projectName>')
-  .option('-f, --upload-type', '查看上传文件支持的类型')
+
+program
+  .command('devops')
+  .option('-p, --platform [platform]', '指定发版系统')
+  .option('-k, --key [key]', '后台配置的key')
+  .action(({ platform, key }) => {
+    platform === 'prod' && applyOrder(key)
+    platform === 'new' && createTask(key)
+  })
+
+program
+  .command('compress')
+  .option('-k, --key [key]', '后台配置的密钥key')
+  .action(({ key }) => {
+    key && compressByTinify(key)
+  })
+
+program
+  .command('init')
+  .action(() => {
+    run && run()
+  })
 
 program
   .parse(process.argv);
@@ -17,5 +41,3 @@ if (program.uploadType) {
   console.log(chalk.green('html|css|js|png|jpe?g|gif|svg|mp4|webm|ogg|mp3|wav|flac|aac|woff2?|eot|ttf|otf\n'));
   return
 }
-
-require('../index.js').run()

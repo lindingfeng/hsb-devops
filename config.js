@@ -5,6 +5,7 @@ const config = {
   AMC_API_HOST: 'api-amc.huishoubao.com.cn',
   DEVOPS_PROD_HOST: 'http://devops-prod.huishoubao.com/',
   DEVOPS_NEW_HOST: 'http://devops-new.huishoubao.com/',
+  JK_HOST: 'http://jk.www.huishoubao.com/api/',
   UPLOAD_FILE_HOST: 'http://mobile.huishoubao.com/common/upload/uploadFileToTencentCould',
   VERSION_2: '2.0.0',
   VERSION_3: '3.0.0',
@@ -44,8 +45,9 @@ const config = {
     { name: '现在发布', value: 1 }
   ],
   AUTO_TAG_LIST: [
-    { name: '自动更新tag', value: true },
-    { name: '已有tag, 不需要更新', value: false }
+    { name: '自动更新tag', value: 1 },
+    { name: '构建后更新tag', value: 2 },
+    { name: '已有tag, 不需要更新', value: 3 }
   ],
   COMPRESS_TEMPLATE_LIST: [
     {
@@ -114,7 +116,12 @@ const mergeHsbDevopsConfig = () => {
   })
 }
 
+const setAppOrderInfo = (data) => {
+  config[data.key] = data.value
+}
+
 module.exports = {
   config,
-  mergeHsbDevopsConfig
+  mergeHsbDevopsConfig,
+  setAppOrderInfo
 }
