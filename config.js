@@ -19,8 +19,8 @@ const config = {
   BASE_LIST: [
     { name: '提交发版工单 <devops-prod>', value: 1 },
     { name: '新建发布任务 <devops-new>', value: 2 },
-    { name: '资源上传CDN', value: 3 },
-    { name: '图片无损压缩 <tinify>', value: 4 }
+    // { name: '资源上传CDN', value: 3 },
+    { name: '图片无损压缩 <tinify>', value: 3 }
   ],
   VERSION_SCOPE: [
     { name: '大版本迭代', value: 0 },
@@ -99,6 +99,13 @@ const config = {
     '9': 'Andriod',
     '10': 'Front',
     '11': 'IOS'
+  },
+  NO_LISTEN_NEW_STATUS_LIST: [2, 3],
+  DEVOPS_NEW_STATUS_MAP: {
+    '0': '未发布',
+    '1': '发布中',
+    '2': '发布失败',
+    '3': '发布成功'
   }
 }
 

@@ -2,10 +2,9 @@
 'use strict';
 
 const { version } = require('../package.json')
-const chalk = require('chalk')
 const program = require('commander');
 const applyOrder = require('../lib/module/applyOrder');
-const { compressByTinify } = require('../lib/module/compress');
+const { compressTinify } = require('../lib/module/compress');
 const createTask = require('../lib/module/createTask');
 const { run } = require('../index.js')
 
@@ -22,10 +21,10 @@ program
   })
 
 program
-  .command('compress')
+  .command('compressTinify')
   .option('-k, --key [key]', '后台配置的密钥key')
   .action(({ key }) => {
-    key && compressByTinify(key)
+    key && compressTinify(key)
   })
 
 program
@@ -36,8 +35,3 @@ program
 
 program
   .parse(process.argv);
-
-if (program.uploadType) {
-  console.log(chalk.green('html|css|js|png|jpe?g|gif|svg|mp4|webm|ogg|mp3|wav|flac|aac|woff2?|eot|ttf|otf\n'));
-  return
-}

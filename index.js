@@ -1,11 +1,9 @@
-// const readline = require('readline');
 const chalk = require('chalk')
 const { baseFeatrue } = require('./lib/module/baseFeatrue');
 const applyOrder = require('./lib/module/applyOrder');
 const createTask = require('./lib/module/createTask');
-const { compressByTinify } = require('./lib/module/compress');
+const { compressTinify } = require('./lib/module/compress');
 const { setUserInfo } = require('./lib/user')
-const { uploadFiles } = require('./lib/upload')
 const { mergeHsbDevopsConfig } = require('./config');
 
 /*
@@ -27,10 +25,7 @@ const start = async (id = 1) => {
         createTask()
         break;
       case 3:
-        uploadFiles()
-        break;
-      case 4:
-        compressByTinify()
+        compressTinify()
         break;
       default:
         applyOrder()
