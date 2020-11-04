@@ -13,12 +13,17 @@ program
   .version(version)
 
 program
-  .command('devops')
-  .option('-p, --platform [platform]', '指定发版系统')
+  .command('devops-new')
   .option('-k, --key [key]', '后台配置的key')
-  .action(({ platform, key }) => {
-    platform === 'prod' && applyOrder(key)
-    platform === 'new' && createTask(key)
+  .action(({ key }) => {
+    key && createTask(key)
+  })
+
+program
+  .command('devops-prod')
+  .option('-k, --key [key]', '后台配置的key')
+  .action(({ key }) => {
+    key && applyOrder(key)
   })
 
 program
@@ -40,8 +45,11 @@ program
 
 program
   .command('init')
-  .action(() => {
-    run && run()
+  .option('-u, --user [user]', 'AMC账号')
+  .option('-p, --password [password]', 'AMC密码')
+  .option('-k, --key [key]', '后台配置的密钥key')
+  .action(({ user, password, key }) => {
+    run && run(user, password, key)
   })
 
 program
