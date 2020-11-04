@@ -22,6 +22,8 @@ const config = {
     // DIR_NAME: 'devops',
     // TYPE: 'zip'
   },
+  successDing: {},
+  TINIFY: {},
   BASE_LIST: [
     { name: '提交发版工单 <devops-prod>', value: 1 },
     { name: '新建发布任务 <devops-new>', value: 2 },

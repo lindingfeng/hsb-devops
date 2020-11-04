@@ -5,6 +5,7 @@ const { version } = require('../package.json')
 const program = require('commander');
 const applyOrder = require('../lib/module/applyOrder');
 const { compressTinify } = require('../lib/module/compress');
+const { uploadFiles, batchUploadFiles } = require('../lib/upload');
 const createTask = require('../lib/module/createTask');
 const { run } = require('../index.js')
 
@@ -25,6 +26,16 @@ program
   .option('-k, --key [key]', '后台配置的密钥key')
   .action(({ key }) => {
     key && compressTinify(key)
+  })
+
+program
+  .command('upload')
+  .option('-d, --dir [dir]', 'CDN目录')
+  .action(({ dir }) => {
+    if (dir) {
+      return batchUploadFiles(`/${dir}`)
+    }
+    uploadFiles()
   })
 
 program
