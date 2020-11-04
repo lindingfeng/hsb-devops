@@ -16,6 +16,12 @@ const config = {
   COMMAND_LINE: 5,
   DESC: 'update something',
   FILTER_UPLOAD_RE: '\.(png|jpe?g|gif)(\?.*)?$',
+  ORDER: {},
+  COMPRESS: {
+    // PATH: 'dist/hsbh5',
+    // DIR_NAME: 'devops',
+    // TYPE: 'zip'
+  },
   BASE_LIST: [
     { name: '提交发版工单 <devops-prod>', value: 1 },
     { name: '新建发布任务 <devops-new>', value: 2 },
