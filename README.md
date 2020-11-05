@@ -21,12 +21,12 @@
 
 Using `npx` you can run the script without installing it first:
 
-    npx hsb-tools git+http://gitlab.huishoubao.com/web_team/ziyou/hsb-tools.git [options]
+    npx hsb-tools git+http://gitlab.huishoubao.com/web_team/ziyou/hsb-tools.git <command> [options]
      
 
 ## Usage:
 
-     hsb-tools [path] [options]
+     hsb-tools <command> [options]
 
      # 使用init命令初始化
      hsb-tools init -u lindingfeng@huishoubao.com.cn -p wsjj1994 -k Lh37kWP9W5QdMz22qChhtYkhMmgtwGLD
@@ -40,7 +40,7 @@ Using `npx` you can run the script without installing it first:
      # 使用compressTinify命令压缩图片
      hsb-tools compressTinify -k Iyxu7bNt
 
-     # 使用upload命令压缩图片(前缀不能使用/)
+     # 使用upload命令上传CDN图片(前缀不能使用/)
      hsb-tools upload -d web/
 
 

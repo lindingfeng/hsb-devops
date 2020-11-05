@@ -11,9 +11,14 @@ const { run } = require('../index.js')
 
 program
   .version(version)
+  .option('-u, --user', 'AMC账号')
+  .option('-p, --password', 'AMC密码')
+  .option('-k, --key', '后台配置的密钥key')
+  .option('-d, --dir', 'CDN目录')
 
 program
   .command('devops-new')
+  .description('devops-new发版命令')
   .option('-k, --key [key]', '后台配置的key')
   .action(({ key }) => {
     key && createTask(key)
@@ -21,6 +26,7 @@ program
 
 program
   .command('devops-prod')
+  .description('devops-prod发版命令')
   .option('-k, --key [key]', '后台配置的key')
   .action(({ key }) => {
     key && applyOrder(key)
@@ -28,6 +34,7 @@ program
 
 program
   .command('compressTinify')
+  .description('tinypng无损压缩命令')
   .option('-k, --key [key]', '后台配置的密钥key')
   .action(({ key }) => {
     key && compressTinify(key)
@@ -35,6 +42,7 @@ program
 
 program
   .command('upload')
+  .description('文件上传CDN命令')
   .option('-d, --dir [dir]', 'CDN目录')
   .action(({ dir }) => {
     if (dir) {
@@ -45,6 +53,7 @@ program
 
 program
   .command('init')
+  .description('初始化命令')
   .option('-u, --user [user]', 'AMC账号')
   .option('-p, --password [password]', 'AMC密码')
   .option('-k, --key [key]', '后台配置的密钥key')
