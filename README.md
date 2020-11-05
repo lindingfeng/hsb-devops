@@ -25,7 +25,7 @@
 
 Using `npx` you can run the script without installing it first:
 
-    npx hsb-tools [path] [options]
+    npx hsb-tools git+http://gitlab.huishoubao.com/web_team/ziyou/hsb-tools.git [options]
      
 
 ## Usage:
@@ -87,3 +87,4 @@ Using `npx` you can run the script without installing it first:
 
 
 ### key的获取可以通过[这里](http://jk.www.huishoubao.com/devops/)去创建并获取
+<!-- [![build status](https://s1.huishoubao.com/static/zy/tools/0BC4AD30-9390-48ba-B6FB-2CE113947577.png)] -->
