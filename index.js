@@ -40,15 +40,15 @@ const start = async (id = 1) => {
 
 const run = (user, password, key) => {
   baseFeatrue(async ({ id }) => {
-    user && password && setAppOrderInfo({ key: 'USER', value: {
-      SYSTEM_ID: '44',
-      USERNAME: user,
-      PASSWORD: password,
-    }})
-    key && setAppOrderInfo({ key: 'TINIFY', value: {
-      KEY: key
-    }})
-    await setUserInfo()
+    key && setAppOrderInfo({ key: 'TINIFY', value: { KEY: key }})
+    if (user && password) {
+      setAppOrderInfo({ key: 'USER', value: {
+        SYSTEM_ID: '44',
+        USERNAME: user,
+        PASSWORD: password
+      }})
+      await setUserInfo()
+    }
     start(id)
   })
 }

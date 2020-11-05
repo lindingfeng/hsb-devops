@@ -1,4 +1,5 @@
 const fs = require('fs');
+const chalk = require('chalk')
 
 const config = {
   AMC_LOGIN_HOST: 'http://api-amc.huishoubao.com.cn/login',
@@ -16,6 +17,8 @@ const config = {
   COMMAND_LINE: 5,
   DESC: 'update something',
   FILTER_UPLOAD_RE: '\.(png|jpe?g|gif)(\?.*)?$',
+  CDN_ID: 'app-53542e6c6b9',
+  USER: {},
   ORDER: {},
   COMPRESS: {
     // PATH: 'dist/hsbh5',
@@ -125,7 +128,8 @@ const mergeHsbDevopsConfig = () => {
       Object.assign(config, JSON.parse(fileData))
       resolve()
     } catch (err) {
-      reject('项目根目录未发现hsb.devops.json配置文件')
+      console.log(chalk.yellow('项目根目录未发现hsb.devops.json配置文件'))
+      resolve()
     }
   })
 }
