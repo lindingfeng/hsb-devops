@@ -33,7 +33,7 @@ program
   })
 
 program
-  .command('compressTinify')
+  .command('tinify')
   .description('tinypng无损压缩命令')
   .option('-k, --key [key]', '后台配置的密钥key')
   .action(({ key }) => {

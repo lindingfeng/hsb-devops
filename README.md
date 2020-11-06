@@ -37,8 +37,8 @@ Using `npx` you can run the script without installing it first:
      # 使用devops-prod命令发版
      hsb-tools devops-prod -k gG1n1MVm
 
-     # 使用compressTinify命令压缩图片
-     hsb-tools compressTinify -k Iyxu7bNt
+     # 使用tinify命令压缩图片
+     hsb-tools tinify -k Iyxu7bNt
 
      # 使用upload命令上传CDN图片(前缀不能使用/)
      hsb-tools upload -d web/
