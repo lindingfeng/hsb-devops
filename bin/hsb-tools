@@ -11,10 +11,10 @@ const { run } = require('../index.js')
 
 program
   .version(version)
-  .option('-u, --user', 'AMC账号')
-  .option('-p, --password', 'AMC密码')
-  .option('-k, --key', '后台配置的密钥key')
-  .option('-d, --dir', 'CDN目录')
+  // .option('-u, --user', 'AMC账号')
+  // .option('-p, --password', 'AMC密码')
+  // .option('-k, --key', '后台配置的密钥key')
+  // .option('-d, --dir', 'CDN目录')
 
 program
   .command('devops-new')
